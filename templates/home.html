@@ -1,0 +1,29 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Youtube Downloader</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+          integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link href="{% static 'css/stylesheet.css' %}" rel="stylesheet">
+</head>
+<body>
+<div id="content">
+    <h1 id="header">Youtube Downloader</h1>
+    <div id="wrapper">
+        <div id="converter">
+            <div id="title">
+                Please insert a valid video URL
+            </div>
+            <form method="post">{% csrf_token %}
+                 <input id="submit" type="submit" value="Convert">
+                {{ form }}
+                <div class="btn-group-toggle" data-toggle="buttons">
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>
